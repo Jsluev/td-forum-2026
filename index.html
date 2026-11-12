@@ -186,7 +186,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 
 /* ---------- числа ---------- */
 .stats{
-  display:grid;grid-template-columns:repeat(4,1fr);
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   border:1px solid rgba(13,19,33,.85);border-radius:var(--radius);overflow:hidden;
   background:rgba(13,19,33,.85);
   gap:1px;
@@ -457,10 +457,11 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   .person__body{padding:0 20px 22px;margin-top:-46px}
   .person__name{font-size:21px}
   .person__stamp{width:84px;height:84px;top:12px;right:12px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stats__cell{padding:24px 20px}
-  .stats__num{font-size:32px}
-  .stats__num .u{font-size:17px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats__cell{padding:22px 16px}
+  .stats__num{font-size:25px}
+  .stats__num .u{font-size:14px}
+  .stats__label{font-size:13px}
   .manifesto{padding:72px 0}
   .manifesto__latin{font-size:28px}
   .triad__row{gap:16px;padding:16px 0}
