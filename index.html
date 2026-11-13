@@ -181,10 +181,13 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 .stats{
   display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   border:1px solid rgba(13,19,33,.85);border-radius:var(--radius);overflow:hidden;
-  background:rgba(13,19,33,.85);
-  gap:1px;
+  background:#fff;gap:0;
 }
-.stats__cell{background:#fff;padding:34px 30px}
+.stats__cell{
+  background:#fff;padding:34px 30px;
+  border-right:1px solid rgba(13,19,33,.85);
+}
+.stats__cell:nth-child(4n){border-right:0}
 .stats__num{font-size:clamp(34px,3.6vw,46px);font-weight:800;color:var(--red);line-height:1;margin-bottom:12px;white-space:nowrap}
 .stats__num .u{font-size:21px;vertical-align:super;font-weight:700}
 .stats__label{font-size:14px;color:var(--ink);line-height:1.5}
@@ -455,6 +458,9 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   .person__name{font-size:21px}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stats__cell{padding:22px 16px}
+  .stats__cell:nth-child(4n){border-right:1px solid rgba(13,19,33,.85)}
+  .stats__cell:nth-child(2n){border-right:0}
+  .stats__cell:nth-child(-n+2){border-bottom:1px solid rgba(13,19,33,.85)}
   .stats__num{font-size:25px}
   .stats__num .u{font-size:14px}
   .stats__label{font-size:13px}
@@ -578,7 +584,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
     <div class="stats reveal">
       <div class="stats__cell"><div class="stats__num">11<span class="u">+</span></div><div class="stats__label">лет работаем для НКО, науки и культуры</div></div>
       <div class="stats__cell"><div class="stats__num">100<span class="u">%</span></div><div class="stats__label">запусков — в срок и с поддержкой после</div></div>
-      <div class="stats__cell"><div class="stats__num">3&nbsp;000<span class="u">₽/час</span></div><div class="stats__label">прозрачная ставка на все работы</div></div>
+      <div class="stats__cell"><div class="stats__num">400<span class="u">+</span></div><div class="stats__label">разборов сайтов для НКО, медиа и культуры</div></div>
       <div class="stats__cell"><div class="stats__num">4–6<span class="u">мес</span></div><div class="stats__label">средний срок перезапуска сайта</div></div>
     </div>
   </div>
