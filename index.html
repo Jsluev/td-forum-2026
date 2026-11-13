@@ -129,13 +129,6 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
     var(--paper);
 }
 .hero__grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding-top:64px;padding-bottom:84px}
-.hero__badge{
-  display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
-  border:1px solid var(--line);border-radius:100px;padding:9px 18px;
-  font-size:13px;font-weight:600;margin-bottom:26px;background:#fff;line-height:1.4;
-}
-.hero__badge .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 2s infinite;flex:none}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 .hero h1{
   font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.09;letter-spacing:-.015em;
   margin-bottom:22px;
@@ -143,11 +136,11 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 .hero h1 .accent{color:var(--red)}
 .hero__sub{font-size:18.5px;color:var(--grey);max-width:530px;margin-bottom:36px}
 .hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-.hero__facts{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
-.hero__fact{display:flex;flex-direction:column;padding-right:30px;margin-right:30px;border-right:1px solid var(--line)}
+.hero__facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:22px}
+.hero__fact{display:flex;flex-direction:column;min-width:0;padding-right:26px;margin-right:26px;border-right:1px solid var(--line)}
 .hero__fact:last-child{border-right:none;margin-right:0;padding-right:0}
-.hero__fact b{font-size:21px;font-weight:800;line-height:1.15}
-.hero__fact span{font-size:13px;color:var(--grey);max-width:170px;line-height:1.4;margin-top:5px}
+.hero__fact b{font-size:19px;font-weight:800;line-height:1.15;white-space:nowrap}
+.hero__fact span{font-size:12.5px;color:var(--grey);line-height:1.4;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ---------- карточка Анны ---------- */
 .person{
@@ -155,20 +148,11 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   overflow:hidden;box-shadow:var(--shadow);
 }
 .person__photo{position:relative}
-.person__photo img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:center 22%}
+.person__photo img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:center 22%;transform:scale(1.06)}
 .person__photo::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(13,19,33,0) 28%,rgba(13,19,33,.5) 60%,rgba(13,19,33,1) 100%);
 }
-.person__stamp{
-  position:absolute;top:16px;right:16px;width:104px;height:104px;z-index:2;
-  filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
-}
-.person__stamp svg{width:100%;height:100%}
-.stamp__ring{fill:none;stroke:#fff;stroke-width:2.5;opacity:.95}
-.stamp__ring2{fill:none;stroke:#fff;stroke-width:1;opacity:.5}
-.stamp__text{font-family:var(--sans);font-size:9.5px;font-weight:800;letter-spacing:.18em;fill:#fff;text-transform:uppercase}
-.stamp__core{font-family:var(--serif);font-size:24px;font-weight:700;fill:#fff}
 .person__body{position:relative;margin-top:-58px;padding:0 30px 28px;z-index:1}
 .person__name{font-size:24px;font-weight:800;line-height:1.2}
 .person__role{font-size:13.5px;color:rgba(255,255,255,.68);margin-top:6px;line-height:1.5}
@@ -198,7 +182,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 
 /* ---------- манифест ---------- */
 .manifesto{padding:112px 0}
-.manifesto__grid{display:grid;grid-template-columns:1.16fr .84fr;gap:72px;align-items:center}
+.manifesto__grid{display:grid;grid-template-columns:1fr}
 .manifesto__latin{
   font-family:var(--serif);font-style:italic;
   font-size:clamp(29px,4.4vw,46px);line-height:1.15;color:#fff;margin-bottom:24px;
@@ -213,8 +197,8 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 }
 .triad__n{font-family:var(--serif);font-size:32px;color:var(--orange);width:46px;flex:none;line-height:1}
 .triad__word{font-size:24px;font-weight:700;letter-spacing:-.01em}
-.triad__desc{font-size:14.5px;color:rgba(255,255,255,.62);margin-left:auto;max-width:280px;text-align:right}
-.manifesto__aside{font-size:16.5px;line-height:1.78;color:rgba(255,255,255,.78)}
+.triad__desc{font-size:14.5px;color:rgba(255,255,255,.62);margin-left:auto;width:min(280px,38%);text-align:left}
+.manifesto__aside{font-size:16.5px;line-height:1.78;color:rgba(255,255,255,.78);margin-top:44px;max-width:640px}
 .manifesto__aside p + p{margin-top:16px}
 .manifesto__aside b{color:#fff}
 
@@ -337,7 +321,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(13,19,33,0) 60%,rgba(13,19,33,.6) 86%,rgba(13,19,33,1) 100%);
 }
-.anna__card img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 22%}
+.anna__card img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 22%;transform:scale(1.06)}
 .anna__card-body{padding:20px 22px 22px;text-align:center}
 .anna__name{font-size:21px;font-weight:800}
 .anna__role{font-size:13px;color:rgba(255,255,255,.68);line-height:1.5;margin-top:7px}
@@ -423,7 +407,6 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   /* только вертикальные отступы: горизонтальные задаёт .wrap — это один и тот же элемент */
   .hero__grid{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:72px}
   .person{max-width:520px}
-  .manifesto__grid{grid-template-columns:1fr;gap:48px}
   .cases__grid,.quotes,.services{grid-template-columns:repeat(2,1fr)}
   .process__grid{grid-template-columns:repeat(2,1fr);gap:30px 16px}
   .anna{grid-template-columns:1fr;gap:44px}
@@ -434,29 +417,27 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 @media (max-width:880px){
   .topbar__nav{display:none}
   .burger{display:flex}
+  .hero__facts{grid-template-columns:repeat(2,1fr)}
+  .hero__fact:first-child{display:none}
 }
 @media (max-width:640px){
   :root{--pad-sect:64px}
   .wrap{padding:0 20px}
-  .hero__badge{display:none}
   .section{padding:64px 0}
   .topbar__in{height:64px}
   .brand__logo{width:150px}
   .mobile-menu{top:64px}
   .hero__grid{padding-top:36px;padding-bottom:56px;gap:36px}
-  .hero__badge{font-size:12px;padding:8px 14px;margin-bottom:20px;line-height:1.4}
   .hero h1{font-size:31px;margin-bottom:16px}
   .hero__sub{font-size:16px;margin-bottom:26px}
   .hero__cta{flex-direction:column;gap:12px}
   .hero__cta .btn{width:100%}
   .hero__facts{gap:14px 0}
-  .hero__fact:first-child{display:none}
   .hero__fact{padding-right:18px;margin-right:18px}
-  .hero__fact b{font-size:19px}
-  .hero__fact span{max-width:130px}
+  .hero__fact b{font-size:17px}
+  .hero__fact span{max-width:none;white-space:normal}
   .person__body{padding:0 20px 22px;margin-top:-46px}
   .person__name{font-size:21px}
-  .person__stamp{width:84px;height:84px;top:12px;right:12px}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stats__cell{padding:22px 16px}
   .stats__num{font-size:25px}
@@ -504,10 +485,9 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 }
 @media (max-width:400px){
   .hero h1{font-size:28px}
-  .hero__facts{flex-direction:column;gap:14px}
-  .hero__fact{border-right:none;padding-right:0;margin-right:0;padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .hero__fact:last-child{border-bottom:none;padding-bottom:0}
-  .hero__fact span{max-width:none}
+  .hero__fact{padding-right:14px;margin-right:14px}
+  .hero__fact b{font-size:16px}
+  .hero__fact span{font-size:11.5px}
 }
 </style>
 </head>
@@ -542,7 +522,6 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="reveal">
-      <div class="hero__badge"><span class="dot"></span> Форум «Технологии Добра» · Москва · 18 ноября 2026</div>
       <h1>Делаем сайты, которые <span class="accent">работают на ваше дело</span></h1>
       <p class="hero__sub">
         Веб-разработка для благотворительности, науки и культуры: сайты, лендинги, платформы —
@@ -565,17 +544,6 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
     <div class="person reveal" data-delay="1">
       <div class="person__photo">
         <img src="assets/anna.jpg" alt="Анна Ладошкина — основатель и руководитель бюро" onerror="this.style.display='none'">
-        <div class="person__stamp" aria-hidden="true">
-          <svg viewBox="0 0 118 118">
-            <defs>
-              <path id="pStampOuter" d="M59,59 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/>
-            </defs>
-            <circle class="stamp__ring" cx="59" cy="59" r="50"/>
-            <circle class="stamp__ring2" cx="59" cy="59" r="42"/>
-            <text class="stamp__text"><textPath href="#pStampOuter">Технологии добра · Москва ·</textPath></text>
-            <text x="59" y="68" text-anchor="middle" class="stamp__core">18.11</text>
-          </svg>
-        </div>
       </div>
       <div class="person__body">
         <div class="person__name">Анна Ладошкина</div>
@@ -617,15 +585,15 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
         <div class="triad__row"><span class="triad__n">II</span><span class="triad__word">Польза</span><span class="triad__desc">Пожертвования, подписки, отчёты — всё работает на задачи</span></div>
         <div class="triad__row"><span class="triad__n">III</span><span class="triad__word">Красота</span><span class="triad__desc">Дизайн, который не стыдно показать донору</span></div>
       </div>
-    </div>
-    <div class="manifesto__aside reveal" data-delay="1">
-      <p>
-        Работаем в гуманитарной сфере: платформы, информационные и фандрайзинговые сайты,
-        сайты журналов, сообществ и грантовых программ.
-      </p>
-      <p>
-        Качественная разработка делает работу каждой НКО <b>заметнее и эффективнее</b>.
-      </p>
+      <div class="manifesto__aside">
+        <p>
+          Работаем в гуманитарной сфере: платформы, информационные и фандрайзинговые сайты,
+          сайты журналов, сообществ и грантовых программ.
+        </p>
+        <p>
+          Качественная разработка делает работу каждой НКО <b>заметнее и эффективнее</b>.
+        </p>
+      </div>
     </div>
   </div>
 </section>
