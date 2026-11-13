@@ -182,7 +182,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 
 /* ---------- манифест ---------- */
 .manifesto{padding:112px 0}
-.manifesto__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:end}
+.manifesto__body{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start;margin-top:36px}
 .manifesto__latin{
   font-family:var(--serif);font-style:italic;
   font-size:clamp(29px,4.4vw,46px);line-height:1.15;color:#fff;margin-bottom:24px;
@@ -190,7 +190,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 .manifesto__latin span{color:var(--orange)}
 .manifesto__text{font-size:17.5px;color:rgba(255,255,255,.78);max-width:520px}
 .manifesto__text b{color:#fff}
-.manifesto__triad{display:flex;flex-direction:column;margin:36px 0 0;border-top:1px solid var(--line-dark)}
+.manifesto__triad{display:flex;flex-direction:column;margin:0;border-top:1px solid var(--line-dark)}
 .triad__row{
   display:flex;gap:22px;align-items:baseline;
   padding:19px 0;border-bottom:1px solid var(--line-dark);
@@ -407,7 +407,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   /* только вертикальные отступы: горизонтальные задаёт .wrap — это один и тот же элемент */
   .hero__grid{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:72px}
   .person{max-width:520px}
-  .manifesto__grid{grid-template-columns:1fr;align-items:start}
+  .manifesto__body{grid-template-columns:1fr;gap:0}
   .manifesto__aside{margin-top:40px}
   .cases__grid,.quotes,.services{grid-template-columns:repeat(2,1fr)}
   .process__grid{grid-template-columns:repeat(2,1fr);gap:30px 16px}
@@ -574,7 +574,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 
 <!-- ================= МАНИФЕСТ ================= -->
 <section class="section section--dark manifesto" id="manifesto">
-  <div class="wrap manifesto__grid">
+  <div class="wrap">
     <div class="reveal">
       <div class="kicker kicker--light">Манифест</div>
       <div class="manifesto__latin">Firmitas. <span>Utilitas.</span> Venustas.</div>
@@ -582,20 +582,22 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
         Три принципа, по которым мы строим сайты: <b>прочное, полезное, красивое</b> вызывает доверие.
         А доверие донора — самый ценный результат работы сайта НКО.
       </p>
+    </div>
+    <div class="manifesto__body reveal" data-delay="1">
       <div class="manifesto__triad">
         <div class="triad__row"><span class="triad__n">I</span><span class="triad__word">Прочность</span><span class="triad__desc">Надёжно, безопасно, работает годами</span></div>
         <div class="triad__row"><span class="triad__n">II</span><span class="triad__word">Польза</span><span class="triad__desc">Пожертвования, подписки, отчёты — всё работает на задачи</span></div>
         <div class="triad__row"><span class="triad__n">III</span><span class="triad__word">Красота</span><span class="triad__desc">Дизайн, который не стыдно показать донору</span></div>
       </div>
-    </div>
-    <div class="manifesto__aside reveal" data-delay="1">
-      <p>
-        Работаем в гуманитарной сфере: платформы, информационные и фандрайзинговые сайты,
-        сайты журналов, сообществ и грантовых программ.
-      </p>
-      <p>
-        Качественная разработка делает работу каждой НКО <b>заметнее и эффективнее</b>.
-      </p>
+      <div class="manifesto__aside">
+        <p>
+          Работаем в гуманитарной сфере: платформы, информационные и фандрайзинговые сайты,
+          сайты журналов, сообществ и грантовых программ.
+        </p>
+        <p>
+          Качественная разработка делает работу каждой НКО <b>заметнее и эффективнее</b>.
+        </p>
+      </div>
     </div>
   </div>
 </section>
