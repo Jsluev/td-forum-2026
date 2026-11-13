@@ -182,7 +182,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 
 /* ---------- манифест ---------- */
 .manifesto{padding:112px 0}
-.manifesto__grid{display:grid;grid-template-columns:1fr}
+.manifesto__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:end}
 .manifesto__latin{
   font-family:var(--serif);font-style:italic;
   font-size:clamp(29px,4.4vw,46px);line-height:1.15;color:#fff;margin-bottom:24px;
@@ -198,7 +198,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 .triad__n{font-family:var(--serif);font-size:32px;color:var(--orange);width:46px;flex:none;line-height:1}
 .triad__word{font-size:24px;font-weight:700;letter-spacing:-.01em}
 .triad__desc{font-size:14.5px;color:rgba(255,255,255,.62);margin-left:auto;width:min(280px,38%);text-align:left}
-.manifesto__aside{font-size:16.5px;line-height:1.78;color:rgba(255,255,255,.78);margin-top:44px;max-width:640px}
+.manifesto__aside{font-size:16.5px;line-height:1.75;color:rgba(255,255,255,.78)}
 .manifesto__aside p + p{margin-top:16px}
 .manifesto__aside b{color:#fff}
 
@@ -407,6 +407,8 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   /* только вертикальные отступы: горизонтальные задаёт .wrap — это один и тот же элемент */
   .hero__grid{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:72px}
   .person{max-width:520px}
+  .manifesto__grid{grid-template-columns:1fr;align-items:start}
+  .manifesto__aside{margin-top:40px}
   .cases__grid,.quotes,.services{grid-template-columns:repeat(2,1fr)}
   .process__grid{grid-template-columns:repeat(2,1fr);gap:30px 16px}
   .anna{grid-template-columns:1fr;gap:44px}
@@ -585,15 +587,15 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
         <div class="triad__row"><span class="triad__n">II</span><span class="triad__word">Польза</span><span class="triad__desc">Пожертвования, подписки, отчёты — всё работает на задачи</span></div>
         <div class="triad__row"><span class="triad__n">III</span><span class="triad__word">Красота</span><span class="triad__desc">Дизайн, который не стыдно показать донору</span></div>
       </div>
-      <div class="manifesto__aside">
-        <p>
-          Работаем в гуманитарной сфере: платформы, информационные и фандрайзинговые сайты,
-          сайты журналов, сообществ и грантовых программ.
-        </p>
-        <p>
-          Качественная разработка делает работу каждой НКО <b>заметнее и эффективнее</b>.
-        </p>
-      </div>
+    </div>
+    <div class="manifesto__aside reveal" data-delay="1">
+      <p>
+        Работаем в гуманитарной сфере: платформы, информационные и фандрайзинговые сайты,
+        сайты журналов, сообществ и грантовых программ.
+      </p>
+      <p>
+        Качественная разработка делает работу каждой НКО <b>заметнее и эффективнее</b>.
+      </p>
     </div>
   </div>
 </section>
