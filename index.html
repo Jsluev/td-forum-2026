@@ -162,7 +162,7 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   overflow:hidden;box-shadow:var(--shadow);
 }
 .person__photo{position:relative;overflow:hidden}
-.person__photo img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:center 22%;transform:scale(1.06)}
+.person__photo img{width:100%;aspect-ratio:4/4.2;object-fit:cover;object-position:center 22%;transform:scale(1.06)}
 .person__photo::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(13,19,33,0) 28%,rgba(13,19,33,.5) 60%,rgba(13,19,33,1) 100%);
@@ -421,10 +421,11 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   .cases__grid,.quotes,.services{grid-template-columns:repeat(2,1fr)}
   .process__grid{grid-template-columns:repeat(2,1fr);gap:30px 16px}
   .anna{grid-template-columns:1fr;gap:44px}
-  .anna__card{display:flex;flex-direction:row;align-items:stretch;max-width:none}
-  .anna__card-photo{flex:0 0 150px;width:150px}
-  .anna__card-photo::after{display:none}
-  .anna__card-body{padding:20px 24px;text-align:left;display:flex;flex-direction:column;justify-content:center}
+  .anna__card{display:flex;flex-direction:column;max-width:none}
+  .anna__card-photo{width:100%;flex:none}
+  .anna__card-photo img{aspect-ratio:4/3.4}
+  .anna__card-photo::after{display:block;background:linear-gradient(180deg,rgba(13,19,33,0) 28%,rgba(13,19,33,.5) 60%,rgba(13,19,33,1) 100%)}
+  .anna__card-body{padding:0 24px 24px;text-align:left;margin-top:-74px;position:relative}
   .final__grid{grid-template-columns:1fr;gap:44px}
   .contact-card{max-width:520px}
 }
@@ -482,8 +483,8 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   .trust__logo-item img{height:34px}
   .trust__logo-item img.img--tall{height:40px}
   .anna{gap:36px}
-  .anna__card-photo{flex:0 0 118px;width:118px}
-  .anna__card-body{padding:14px 16px}
+  .anna__card-photo img{aspect-ratio:4/3.5}
+  .anna__card-body{padding:0 18px 20px;margin-top:-64px}
   .anna__name{font-size:19px}
   .anna__role{font-size:12px}
   .anna__fact{grid-template-columns:96px 1fr;gap:12px;padding:13px 0}
