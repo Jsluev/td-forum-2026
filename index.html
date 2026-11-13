@@ -170,11 +170,6 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
 .person__body{position:relative;margin-top:-58px;padding:0 30px 28px;z-index:1}
 .person__name{font-size:24px;font-weight:800;line-height:1.2}
 .person__role{font-size:13.5px;color:rgba(255,255,255,.68);margin-top:6px;line-height:1.5}
-.person__hi{
-  margin-top:16px;padding-top:16px;border-top:1px solid var(--line-dark);
-  font-size:15px;line-height:1.6;color:rgba(255,255,255,.85);
-}
-.person__hi b{color:#fff}
 .person__badge{
   display:inline-flex;align-items:center;gap:9px;margin-top:18px;
   border:1px dashed rgba(255,255,255,.45);border-radius:100px;
@@ -426,7 +421,10 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   .cases__grid,.quotes,.services{grid-template-columns:repeat(2,1fr)}
   .process__grid{grid-template-columns:repeat(2,1fr);gap:30px 16px}
   .anna{grid-template-columns:1fr;gap:44px}
-  .anna__card{max-width:300px}
+  .anna__card{display:flex;flex-direction:row;align-items:stretch;max-width:none}
+  .anna__card-photo{flex:0 0 150px;width:150px}
+  .anna__card-photo::after{display:none}
+  .anna__card-body{padding:20px 24px;text-align:left;display:flex;flex-direction:column;justify-content:center}
   .final__grid{grid-template-columns:1fr;gap:44px}
   .contact-card{max-width:520px}
 }
@@ -484,7 +482,10 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
   .trust__logo-item img{height:34px}
   .trust__logo-item img.img--tall{height:40px}
   .anna{gap:36px}
-  .anna__card{max-width:280px}
+  .anna__card-photo{flex:0 0 118px;width:118px}
+  .anna__card-body{padding:14px 16px}
+  .anna__name{font-size:19px}
+  .anna__role{font-size:12px}
   .anna__fact{grid-template-columns:96px 1fr;gap:12px;padding:13px 0}
   .anna__fact b{font-size:16.5px}
   .anna__fact span{font-size:13.5px}
@@ -564,10 +565,6 @@ a.btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--orange);out
       <div class="person__body">
         <div class="person__name">Анна Ладошкина</div>
         <div class="person__role">Основатель и руководитель бюро. Веб-дизайнер и разработчик</div>
-        <div class="person__hi">
-          Привет! Мы познакомились на форуме. Задумаетесь о сайте — новом или перезапуске —
-          <b>напишите</b>: поговорим, подскажем, поможем.
-        </div>
         <div class="person__badge">Эксперт форума «Технологии Добра»</div>
       </div>
     </div>
